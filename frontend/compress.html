@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compress PDF | UNItools</title>
+    
+    <!-- Base styles for the whole site -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <!-- Styles for the compressor page ONLY -->
+    <link rel="stylesheet" href="./styles/compress.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- This header is identical to the one on the homepage for consistency -->
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="index.html" class="logo"><strong>UNI</strong>tools</a>
+            
+            <ul class="nav-links">
+                <!-- Added 'active' class to show which tool section is open -->
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle">PDF Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Merge PDF</a></li>
+                        <li><a href="#">Split PDF</a></li>
+                        <li><a href="compress.html">Compress PDF</a></li>
+                        <li><a href="#">PDF to Word</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Calculators</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">GPA Calculator</a></li>
+                        <li><a href="#">Final Grade Calculator</a></li>
+                        <li><a href="#">CGPA Estimator</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About</a></li>
+            </ul>
+
+            <a href="#" class="nav-button">Sign In</a>
+        </nav>
+    </header>
+
+    <!-- Main content for the compressor tool -->
+    <main class="compressor-section">
+        <div class="tool-header">
+            <h1>Compress PDF</h1>
+            <p>Reduce the file size of your PDF while optimizing for maximal quality.</p>
+        </div>
+
+        <div class="upload-box">
+            <!-- Hidden file input -->
+            <input type="file" id="file-upload" accept=".pdf" hidden/>
+            
+            <!-- Upload Icon (Inline SVG for performance and style control) -->
+            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            
+            <p class="upload-text">Drag & Drop your PDF here</p>
+            <p class="upload-subtext">or</p>
+
+            <!-- This label is linked to the hidden file input -->
+            <label for="file-upload" class="upload-button">Choose File</label>
+        </div>
+    </main>
+
+</body>
+</html>

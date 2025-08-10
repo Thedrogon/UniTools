@@ -1,0 +1,178 @@
+/* ==========================================================================
+   Base Stylesheet for UNItools
+   Contains all shared styles for the website (navbar, buttons, globals).
+   ========================================================================== */
+
+/* ------------------------- */
+/* --- Global Styles & Reset --- */
+/* ------------------------- */
+:root {
+    --primary-black: #0F0F0F;
+    --primary-white: #FFFFFF;
+    --secondary-gray: #888888;
+    --accent-blue: #007AFF;
+    --border-color: #EAEAEA;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ------------------------- */
+/* --- Shared Header & Navbar --- */
+/* ------------------------- */
+.site-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 5%;
+}
+
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--primary-black);
+    border-radius: 50px;
+    padding: 15px 30px;
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-white);
+}
+
+.logo strong {
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: var(--primary-white);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #b9b9b9;
+}
+
+/* Style for the active navigation section */
+.nav-links .active > .dropdown-toggle {
+    color: #ffffff;
+    position: relative;
+}
+
+.nav-links .active > .dropdown-toggle::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background-color: var(--primary-white);
+    border-radius: 50%;
+}
+
+
+.nav-button {
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* ------------------------- */
+/* --- Shared Dropdown Menu --- */
+/* ------------------------- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle::after {
+    content: '▾';
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 140%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-black);
+    border-radius: 12px;
+    padding: 8px 0;
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    border: 1px solid #222;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, top 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    top: 115%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    background-color: #2a2a2a;
+    color: var(--primary-white);
+}
